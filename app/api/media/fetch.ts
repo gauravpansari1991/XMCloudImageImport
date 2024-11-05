@@ -52,8 +52,7 @@ export const getToken = async (): Promise<string> => {
 };
 
 export async function fetchMockMediaAsync(): Promise<MediaApiResponse> {
-  const mockData = getMockData();
-  return mockData;
+  return getMockData();
 }
 
 export default fetchMediaFilesInfo;
