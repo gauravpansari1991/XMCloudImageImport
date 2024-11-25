@@ -18,9 +18,7 @@ export async function modifyMediaInSitecore(
       const alreadyExist = apiMediaFiles.some(
         (item) => item.id == sitecoreMediaFiles[i].innerItem.displayName
       );
-      console.log('alreadyExist for delete', alreadyExist);
       if (!alreadyExist) {
-        console.log('media delete', sitecoreMediaFiles[i].innerItem.name);
         // Delete media
         await deleteMediaFile(sitecoreMediaFiles[i].innerItem.name);
       }
@@ -32,15 +30,12 @@ export async function modifyMediaInSitecore(
     const alreadyExist =
       sitecoreMediaFiles.length > 0 &&
       sitecoreMediaFiles.some((item) => item.innerItem.displayName == apiMediaFiles[i].id);
-    console.log('alreadyExist for update', alreadyExist);
     if (!alreadyExist) {
-      console.log('media create');
       // Upload media
       const uploadMediaInSitecoreResponse = await uploadMediaInSitecore(
         apiMediaFiles[i].id,
         apiMediaFiles[i].asseturl
       );
-      console.log('modifyMedia', uploadMediaInSitecoreResponse);
 
       // update media item
       await updateMediaFileInSitecore(uploadMediaInSitecoreResponse.ItemPath, apiMediaFiles[i].id);

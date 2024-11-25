@@ -7,7 +7,7 @@ const getSitecoreMediaUrl = async (itemName: string, itemPath: string): Promise<
 
   const getAuthToken = await getToken();
   const itemNameSplitted = mediaItemName(itemName, itemPath);
-  const mediaItemPath = process.env.ADS_MEDIA_IMPORT_ROOT_PATH_WITHOUT_MEDIA + itemNameSplitted;
+  const mediaItemPath = process.env.MEDIA_IMPORT_ROOT_PATH_WITHOUT_MEDIA + itemNameSplitted;
 
   const data = {
     query: getMediaPrerenderUrlGraphQL,

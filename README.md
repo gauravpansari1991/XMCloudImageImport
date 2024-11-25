@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -16,21 +14,19 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## About Solution
+This solution use to import media files from external link to XMC Sitecore.
 
-## Learn More
+This solution right now supports app routing, we'll update it to support page routing soon as well.
 
-To learn more about Next.js, take a look at the following resources:
+Solutions consist of Upload and Delete the media files, and upload/delete supports images and videos both, didn't tested with files but should support those as well.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You need to change following things in .env file to use this solution -
+1) GRAPH_QL_AUTHORING_ENDPOINT - update GraphQL AUTHORING endpoint not EDGE one
+2) AUTHORING_GRAPHQL_TOKEN_CLIENT_ID - Authoring graphQL Token Client ID
+3) AUTHORING_GRAPHQL_TOKEN_CLIENT_SECRET- Authoring graphQL Token Client Secret
+4) AUTHORING_GRAPHQL_TOKEN_ENDPOINT_URL - - Authoring graphQL Token Endpoint url
+5) MEDIA_IMPORT_ROOT_PATH - Sitecore Media item path where you want to import media files
+6) MEDIA_IMPORT_ROOT_PATH_WITHOUT_MEDIA - Sitecore Media item path without sitecore/media library
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

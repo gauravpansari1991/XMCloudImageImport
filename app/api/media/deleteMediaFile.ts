@@ -10,7 +10,7 @@ const deleteMediaFile = async (itemName: string): Promise<string> => {
   const endpoint = process.env.GRAPH_QL_AUTHORING_ENDPOINT as string;
 
   const getAuthToken = await getToken();
-  const mediaItemPath = process.env.ADS_MEDIA_IMPORT_ROOT_PATH + itemName;
+  const mediaItemPath = process.env.MEDIA_IMPORT_ROOT_PATH + itemName;
 
   const data = {
     query: deleteMediaFileGraphQL,

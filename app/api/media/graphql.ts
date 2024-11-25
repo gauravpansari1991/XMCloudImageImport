@@ -63,30 +63,3 @@ export const updateMediaFileGraphQL = /* GraphQL */ `
     }
   }
 `;
-
-// const sitecoreMediaRootItem = '8C3EA033-3617-43A9-A7F3-9211AA4B6B4C';
-// export const getMediaFilesGraphQL = /* GraphQL */ `
-//   query {
-//     search(
-//       where: {
-//           { name: "_path", value: "${sitecoreMediaRootItem}" }
-//       }
-//       # defaults to 10
-//       first: 100
-//     ) {
-//       results {
-//         # ... on Item {
-//         #   name: field(name: "SiteName") {
-//         #     value
-//         #   }
-//         #   otherProperties: field(name: "OtherProperties") {
-//         #     value
-//         #   }
-//         # }
-//         id
-//         name
-//         displayName
-//       }
-//     }
-//   }
-// `;
