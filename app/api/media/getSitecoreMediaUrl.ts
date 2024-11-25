@@ -33,11 +33,21 @@ const getSitecoreMediaUrl = async (itemName: string, itemPath: string): Promise<
 };
 
 function mediaItemName(itemName: string, itemPath: string) {
+  if (!itemName || !itemPath) {
+    return '';
+  }
+
   const itemNameSplitted = itemName.split('.')[0].replace(/[^a-zA-Z0-9]/g, '');
   const splittedUrl = itemPath.split('/');
-  const nameFromUrl = splittedUrl[splittedUrl.length - 1]
+
+  var nameFromUrl = '';
+
+  if (splittedUrl && splittedUrl.length > 0) {
+    nameFromUrl = splittedUrl[splittedUrl.length - 1]
     .split('.')[0]
     .replace(/[^a-zA-Z0-9]/g, '');
+  }
+
   return itemNameSplitted + '-' + nameFromUrl;
 }
 
